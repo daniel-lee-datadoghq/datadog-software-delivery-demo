@@ -28,7 +28,7 @@ jobs:
       env:
         DATADOG_SITE: datadoghq.com
         DATADOG_API_KEY: ${{ secrets.DATADOG_API_KEY }}
-      run: datadog-ci tag --level pipeline --tags team:sre-test --tags service:hello-world
+      run: datadog-ci tag --level pipeline --tags team:sre-test --tags service:hello-world-test
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
