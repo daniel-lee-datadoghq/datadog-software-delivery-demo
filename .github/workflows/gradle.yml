@@ -46,5 +46,12 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
+    - name: Configure Datadog Test Optimization
+      uses: datadog/test-visibility-github-action@v2
+      with:
+        languages: java
+        api_key: ${{ secrets.DATADOG_API_KEY }}
+        site: datadoghq.com
+
     - name: Test with Gradle Wrapper
       run: ./gradlew clean test
