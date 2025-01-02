@@ -43,9 +43,6 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
-    - name: Build with Gradle Wrapper
-      run: ./gradlew build
-
     - name: Configure Datadog Test Optimization
       uses: datadog/test-visibility-github-action@v2
       with:
@@ -53,5 +50,6 @@ jobs:
         api_key: ${{ secrets.DATADOG_API_KEY }}
         site: datadoghq.com
 
-    - name: Test with Gradle Wrapper
-      run: ./gradlew clean test
+    - name: Build and Test with Gradle Wrapper
+      run: ./gradlew build
+  
